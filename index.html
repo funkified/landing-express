@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EF CRM · $2,500 · Sergio Vera</title>
+  <title>EF CRM – $2,500 CRM Express</title>
 
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -11,124 +11,175 @@
   />
 
   <style>
-    body {
-      background-color: #f5f8fc;
-      color: #1b2733;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    :root {
+      --accent: #0d6efd;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --radius: 18px;
+      --border: 1px solid #e2e8f0;
+      --shadow: 0 7px 18px rgba(15, 23, 42, 0.08);
     }
 
-    .hero-section {
-      padding: 80px 0 60px;
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+    }
+
+    nav {
+      background: transparent;
+      padding: 14px 0;
+    }
+
+    nav .brand {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .hero {
+      padding: 90px 0 70px;
     }
 
     .hero-title {
-      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-size: clamp(2.6rem, 4vw, 3.4rem);
       font-weight: 700;
-      line-height: 1.2;
+      line-height: 1.1;
     }
 
     .hero-subtitle {
       font-size: 1.2rem;
-      color: #51606f;
       max-width: 480px;
+      color: var(--text-muted);
     }
 
-    .price-box {
-      background: white;
-      border-radius: 16px;
-      padding: 24px;
-      border: 1px solid #d7e0eb;
-      box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+    .price-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: var(--border);
+      padding: 32px;
+      box-shadow: var(--shadow);
     }
 
     .price {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 700;
-      color: #008c6d;
+      color: var(--accent);
     }
 
-    .label-badge {
-      background-color: #008c6d;
-      color: white;
-      padding: 5px 10px;
+    .price-caption {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .btn-primary-ef {
+      background-color: var(--accent);
       border-radius: 999px;
-      font-size: 0.75rem;
+      padding: 14px 24px;
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-    }
-
-    .btn-whatsapp {
-      background-color: #008c6d;
       border: none;
-      color: white;
-      font-weight: 600;
-      padding: 14px 26px;
+    }
+
+    .btn-primary-ef:hover {
+      background-color: #0b58d0;
+    }
+
+    .btn-outline-ef {
       border-radius: 999px;
-      width: 100%;
-      font-size: 1rem;
+      padding: 14px 24px;
+      font-weight: 600;
+      border: 2px solid var(--text-main);
+      color: var(--text-main);
     }
 
-    .btn-whatsapp:hover {
-      background-color: #007258;
-      color: white;
-    }
-
-    .feature-box {
-      background: white;
-      border: 1px solid #d7e0eb;
-      border-radius: 12px;
+    .feature-card {
+      background: var(--card-bg);
+      border: var(--border);
+      border-radius: var(--radius);
       padding: 20px;
       height: 100%;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+      box-shadow: var(--shadow);
     }
 
     footer {
+      padding: 30px 0;
       margin-top: 80px;
-      padding: 16px 0;
-      color: #5d6a77;
-      font-size: 0.9rem;
+      border-top: var(--border);
+      color: var(--text-muted);
+      font-size: 0.95rem;
       text-align: center;
     }
   </style>
 </head>
 
 <body>
-  <section class="hero-section">
+  <nav class="container d-flex justify-content-between align-items-center">
+    <span class="brand">EF CRM</span>
+    <a
+      href="https://wa.me/17873669900?text=CRM"
+      class="btn btn-outline-dark rounded-pill"
+      style="padding: 8px 18px;"
+      target="_blank"
+      rel="noopener"
+    >
+      WhatsApp
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
     <div class="container">
       <div class="row align-items-center justify-content-between g-5">
         <div class="col-lg-6">
           <h1 class="hero-title">
-            Tu CRM completo por <strong>$2,500</strong><br />
-            — sin mensualidades.
+            Tu propio CRM<br />
+            por <strong>$2,500</strong>.
           </h1>
           <p class="hero-subtitle mt-3">
-            Perfecto para Solar, ADT, Autos, Negocios Locales y Profesionales que necesitan
-            organización, seguimiento y cierre — ahora.
+            CRM completo · base de datos · panel · usuarios ilimitados · reportes · formularios
+            · archivos · WhatsApp · CSV · API · QR · sin mensualidades.
           </p>
-        </div>
 
-        <div class="col-lg-5">
-          <div class="price-box">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <span class="label-badge">Oferta</span>
-              <span class="text-secondary small">Entrega rápida</span>
-            </div>
-
-            <div class="price mb-2">$2,500</div>
-
-            <p class="small text-secondary mb-4">
-              Incluye CRM, landing, formulario, base de datos, panel, reportes, usuarios ilimitados,
-              leads exportables, soporte inicial y entrenamiento.
-            </p>
-
+          <div class="d-flex flex-wrap gap-3 mt-4">
             <a
-              href="https://wa.me/17873669900?text=Hola%20Sergio,%20quiero%20información%20del%20CRM%20de%202,500"
-              class="btn-whatsapp"
+              href="https://wa.me/17873669900?text=CRM"
+              class="btn btn-primary-ef"
               target="_blank"
               rel="noopener"
             >
               Hablar por WhatsApp
+            </a>
+            <a
+              href="#info"
+              class="btn btn-outline-ef"
+            >
+              Ver detalles
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="price-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="price">$2,500</span>
+              <span class="price-caption">único pago</span>
+            </div>
+            <p class="text-muted small mb-4">
+              Instancia privada. Hosting incluido. CRM completo con dashboard, login, seguridad,
+              creación de usuarios, panel de leads, exportación CSV, reportes y API. Entrega
+              personalizada y soporte inicial.
+            </p>
+            <a
+              href="https://wa.me/17873669900?text=CRM"
+              class="btn btn-primary-ef w-100"
+              target="_blank"
+              rel="noopener"
+            >
+              Empezar ahora
             </a>
           </div>
         </div>
@@ -136,42 +187,43 @@
     </div>
   </section>
 
-  <section class="py-5">
+  <!-- FEATURES -->
+  <section id="info" class="py-5">
     <div class="container">
       <h2 class="h4 mb-4">¿Qué incluye?</h2>
-      <div class="row g-3">
+      <div class="row g-4">
         <div class="col-md-6 col-lg-3">
-          <div class="feature-box">
+          <div class="feature-card">
             <strong>CRM completo</strong>
-            <p class="small text-secondary mb-0">
-              Base de datos, gestión de leads, notas, seguimiento, estatus, reportes y más.
+            <p class="small text-muted mb-0">
+              Panel · dashboard · usuarios ilimitados · filtros · exportación CSV.
             </p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3">
-          <div class="feature-box">
-            <strong>Landing + Formulario</strong>
-            <p class="small text-secondary mb-0">
-              Recolección inmediata de datos para ventas en tiempo real.
+          <div class="feature-card">
+            <strong>Landing + Form</strong>
+            <p class="small text-muted mb-0">
+              Captura tus leads automáticamente en tu CRM.
             </p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3">
-          <div class="feature-box">
-            <strong>Usuarios ilimitados</strong>
-            <p class="small text-secondary mb-0">
-              Tu equipo completo puede acceder sin costo adicional.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="feature-box">
+          <div class="feature-card">
             <strong>Integraciones</strong>
-            <p class="small text-secondary mb-0">
-              WhatsApp, email, CSV, API, QR, campañas, landing externas y más.
+            <p class="small text-muted mb-0">
+              WhatsApp, QR, CSV, email, API, campañas, apps externas.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card">
+            <strong>Soporte inicial</strong>
+            <p class="small text-muted mb-0">
+              Entrenamiento · ajustes · onboarding · setup técnico.
             </p>
           </div>
         </div>
@@ -179,8 +231,22 @@
     </div>
   </section>
 
+  <!-- CTA -->
+  <section class="py-4">
+    <div class="container text-center">
+      <a
+        href="https://wa.me/17873669900?text=CRM"
+        class="btn btn-primary-ef px-5"
+        target="_blank"
+        rel="noopener"
+      >
+        Solicitar CRM
+      </a>
+    </div>
+  </section>
+
   <footer>
-    © 2025 · EF CRM · Sergio Vera — Puerto Rico
+    © 2025 · EF CRM · Sergio Vera – Puerto Rico  
   </footer>
 
 </body>
