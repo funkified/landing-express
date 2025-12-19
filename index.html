@@ -3,243 +3,580 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EF CRM – $2,500 CRM Express</title>
+  <title>EF CRM · Enterprise Sales Ops · Sergio Vera</title>
 
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
   <style>
-    :root {
-      --bg-dark: #090b16;
-      --bg-card: #111623;
-      --bg-highlight: #1b2335;
-      --accent: #4ade80;
-      --text-main: #ffffff;
-      --text-muted: #9ca3af;
-      --radius: 18px;
-      --border: 1px solid #1e2533;
-      --shadow: 0 20px 35px rgba(0,0,0,0.40);
+    :root{
+      --bg:#070A12;
+      --panel:#0C1220;
+      --panel2:#0E1628;
+      --border:#1C2740;
+      --text:#F8FAFC;
+      --muted:#9AA7BD;
+      --muted2:#B9C6DA;
+      --accent:#4F8BFF;
+      --accent2:#35D0BA;
+      --ok:#4ADE80;
+      --shadow:0 24px 60px rgba(0,0,0,.45);
+      --radius:18px;
     }
 
-    body {
-      background: var(--bg-dark);
-      color: var(--text-main);
+    body{
+      background:
+        radial-gradient(900px 600px at 10% -10%, rgba(79,139,255,.16), transparent 60%),
+        radial-gradient(900px 600px at 95% 10%, rgba(53,208,186,.14), transparent 55%),
+        radial-gradient(1200px 700px at 50% 120%, rgba(74,222,128,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
-    nav {
-      padding: 18px 0;
-      border-bottom: var(--border);
-      background: rgba(17, 22, 35, 0.6);
+    .nav-wrap{
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(7,10,18,.55);
       backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(28,39,64,.8);
     }
 
-    nav .brand {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: 0.02em;
+    .brand{
+      font-weight: 650;
+      letter-spacing: .02em;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      white-space:nowrap;
     }
 
-    .hero {
-      padding: 100px 0 70px;
+    .brand-badge{
+      font-size:.72rem;
+      padding:6px 10px;
+      border-radius:999px;
+      border: 1px solid rgba(79,139,255,.35);
+      background: rgba(79,139,255,.10);
+      color: #CFE0FF;
+      text-transform: uppercase;
+      letter-spacing: .10em;
     }
 
-    .hero-title {
-      font-size: clamp(2.6rem, 4vw, 3.4rem);
-      font-weight: 600;
-      line-height: 1.1;
+    .nav-link{
+      color: var(--muted2) !important;
+      opacity: .95;
     }
+    .nav-link:hover{ color: var(--text) !important; }
 
-    .hero-subtitle {
-      font-size: 1.2rem;
-      max-width: 480px;
-      color: var(--text-muted);
-    }
-
-    .price-card {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      border: var(--border);
-      padding: 32px;
-      box-shadow: var(--shadow);
-    }
-
-    .price {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .price-caption {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .btn-primary-ef {
-      background-color: var(--accent);
-      border-radius: 999px;
-      padding: 14px 24px;
-      font-weight: 600;
+    .btn-primary-ef{
+      background: linear-gradient(135deg, var(--accent), #7AA6FF);
       border: none;
-      color: #01130b;
+      color: #061022;
+      font-weight: 650;
+      border-radius: 999px;
+      padding: 10px 16px;
+    }
+    .btn-primary-ef:hover{ filter: brightness(1.02); }
+
+    .btn-outline-ef{
+      border-radius: 999px;
+      border: 1px solid rgba(185,198,218,.35);
+      color: var(--text);
+      padding: 10px 16px;
+      font-weight: 650;
+      background: rgba(255,255,255,.02);
+    }
+    .btn-outline-ef:hover{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(185,198,218,.55);
+      color: var(--text);
     }
 
-    .card-feature {
-      background: var(--bg-card);
-      border: var(--border);
+    .hero{
+      padding: 78px 0 28px;
+    }
+
+    .hero-title{
+      font-size: clamp(2.2rem, 4vw, 3.1rem);
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .hero-subtitle{
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 640px;
+      margin-bottom: 18px;
+    }
+
+    .trust-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      margin-top: 14px;
+      color: var(--muted2);
+      font-size: .92rem;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(185,198,218,.18);
+      background: rgba(255,255,255,.03);
+      color: var(--muted2);
+      font-size: .88rem;
+      white-space: nowrap;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:50%;
+      background: var(--ok);
+      box-shadow: 0 0 0 4px rgba(74,222,128,.12);
+    }
+
+    .panel{
+      background: linear-gradient(180deg, rgba(12,18,32,.92), rgba(12,18,32,.88));
+      border: 1px solid rgba(28,39,64,.85);
       border-radius: var(--radius);
-      padding: 24px;
-      height: 100%;
       box-shadow: var(--shadow);
     }
 
-    footer {
-      border-top: var(--border);
+    .panel-soft{
+      background: radial-gradient(900px 380px at 20% 0%, rgba(79,139,255,.14), transparent 55%),
+                  radial-gradient(900px 380px at 85% 15%, rgba(53,208,186,.12), transparent 55%),
+                  var(--panel2);
+      border: 1px solid rgba(28,39,64,.85);
+      border-radius: var(--radius);
+    }
+
+    .kpi{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .kpi .k{
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(185,198,218,.12);
+      background: rgba(255,255,255,.03);
+      min-width: 160px;
+    }
+    .k small{ color: var(--muted); }
+    .k strong{ display:block; font-size: 1.05rem; margin-top: 2px; }
+
+    .section{
+      padding: 26px 0;
+    }
+    .section-title{
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .section-sub{
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .cardx{
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(185,198,218,.12);
+      border-radius: 16px;
+      padding: 18px;
+      height: 100%;
+    }
+    .cardx h3{
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 6px;
+    }
+    .cardx p{
+      color: var(--muted);
+      font-size: .95rem;
+      margin: 0;
+    }
+
+    .price{
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .price-note{
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .divider{
+      border-top: 1px solid rgba(185,198,218,.12);
+      margin: 16px 0;
+    }
+
+    footer{
+      border-top: 1px solid rgba(28,39,64,.75);
+      color: var(--muted);
       padding: 24px 0;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-top: 80px;
-      text-align: center;
+      margin-top: 36px;
+      font-size: .92rem;
+    }
+    .mono{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      color: #CFE0FF;
+      font-size: .92rem;
     }
   </style>
 </head>
 
 <body>
-  <nav class="container d-flex justify-content-between align-items-center">
-    <span class="brand">EF CRM</span>
-    <a
-      href="https://wa.me/17873669900?text=CRM"
-      class="btn btn-outline-light rounded-pill"
-      style="padding: 8px 18px;"
-      target="_blank"
-      rel="noopener"
-    >
-      WhatsApp
-    </a>
-  </nav>
+  <!-- NAV -->
+  <div class="nav-wrap">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+      <div class="container py-2">
+        <a class="navbar-brand brand" href="#">
+          EF CRM <span class="brand-badge">Enterprise</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navMain">
+          <ul class="navbar-nav align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="#platform">Plataforma</a></li>
+            <li class="nav-item"><a class="nav-link" href="#security">Seguridad</a></li>
+            <li class="nav-item"><a class="nav-link" href="#integrations">Integraciones</a></li>
+            <li class="nav-item"><a class="nav-link" href="#pricing">Precios</a></li>
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+              <a class="btn btn-outline-ef" href="mailto:sergio.vera@icloud.com?subject=EF%20CRM%20-%20Request%20Demo">
+                Contact Sales
+              </a>
+            </li>
+            <li class="nav-item mt-2 mt-lg-0">
+              <a class="btn btn-primary-ef" href="https://wa.me/17873669900?text=Hola%20Sergio,%20quiero%20una%20demo%20de%20EF%20CRM%20para%20mi%20empresa" target="_blank" rel="noopener">
+                Request Demo
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="row align-items-center justify-content-between g-5">
-        <div class="col-lg-6">
-          <h1 class="hero-title">
-            Tu propio CRM<br />
-            por <strong>$2,500</strong>.
+      <div class="row g-4 align-items-center justify-content-between">
+        <div class="col-lg-7">
+          <div class="pill"><span class="dot"></span> Implementación rápida · Propiedad de datos · Integración con procesos existentes</div>
+          <h1 class="hero-title mt-3">
+            CRM operativo para equipos comerciales<br/>con control, trazabilidad y reporting.
           </h1>
-          <p class="hero-subtitle mt-3">
-            Base de datos · panel · usuarios ilimitados · formularios · reportes · archivo ·
-            seguimiento · CSV · API · WhatsApp · 24/7.
+          <p class="hero-subtitle">
+            EF CRM estandariza la captación de leads, seguimiento, pipeline y reportes con una implementación
+            enfocada en adopción: flujos claros, permisos, auditoría básica y exportación.
           </p>
 
-          <div class="d-flex flex-wrap gap-3 mt-4">
-            <a
-              href="https://wa.me/17873669900?text=CRM"
-              class="btn btn-primary-ef"
-              target="_blank"
-              rel="noopener"
-            >
-              Hablar por WhatsApp
-            </a>
-            <a
-              href="#info"
-              class="btn btn-outline-light rounded-pill"
-              style="padding: 14px 24px; font-weight:600;"
-            >
-              Ver detalles
-            </a>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <a class="btn btn-primary-ef" href="https://wa.me/17873669900?text=Hola%20Sergio,%20quiero%20una%20demo%20de%20EF%20CRM%20para%20mi%20empresa" target="_blank" rel="noopener">Request Demo</a>
+            <a class="btn btn-outline-ef" href="#pricing">Ver precios</a>
+          </div>
+
+          <div class="trust-row">
+            <span class="pill">Sales Ops</span>
+            <span class="pill">Lead Capture</span>
+            <span class="pill">Dashboards</span>
+            <span class="pill">Exports</span>
+            <span class="pill">API-ready</span>
+          </div>
+
+          <div class="kpi">
+            <div class="k">
+              <small>Tiempo a producción</small>
+              <strong>Rápido (pilot)</strong>
+            </div>
+            <div class="k">
+              <small>Deployment</small>
+              <strong>Cloud / Custom</strong>
+            </div>
+            <div class="k">
+              <small>Datos</small>
+              <strong>Propiedad del cliente</strong>
+            </div>
           </div>
         </div>
 
         <div class="col-lg-5">
-          <div class="price-card">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <span class="price">$2,500</span>
-              <span class="price-caption">único pago</span>
+          <div class="panel p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="mono">EF CRM · Pilot</span>
+              <span class="pill">Enterprise-ready</span>
             </div>
-            <p class="text-muted small mb-4">
-              Instancia privada. Hosting incluido. CRM completo con dashboard, login, seguridad,
-              creación de usuarios, panel de leads, exportación CSV, reportes y API. Entrega
-              personalizada y soporte inicial.
+
+            <p class="text-secondary mb-3" style="color: var(--muted) !important;">
+              Paquete inicial para validar flujo comercial y captación de leads con estructura, permisos y reporting.
             </p>
-            <a
-              href="https://wa.me/17873669900?text=CRM"
-              class="btn btn-primary-ef w-100"
-              target="_blank"
-              rel="noopener"
-            >
-              Empezar ahora
-            </a>
+
+            <div class="d-flex align-items-baseline justify-content-between">
+              <div>
+                <div class="price">$2,500</div>
+                <div class="price-note">Desde · piloto / implementación base</div>
+              </div>
+              <div class="text-end">
+                <div class="pill">One-time setup</div>
+                <div class="pill">Upgrades disponibles</div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <ul class="text-secondary small mb-3" style="color: var(--muted) !important;">
+              <li>Captura de leads (landing/form) y panel de administración</li>
+              <li>Pipeline/estatus + notas + exportación CSV</li>
+              <li>Roles básicos (admin / agente) + acceso seguro</li>
+              <li>Onboarding y soporte inicial</li>
+            </ul>
+
+            <div class="d-grid gap-2">
+              <a class="btn btn-primary-ef" href="mailto:sergio.vera@icloud.com?subject=EF%20CRM%20-%20Request%20Demo&body=Hola%20Sergio,%20quiero%20coordinar%20una%20demo%20para%20mi%20empresa.%0A%0AIndustria:%0AEquipo%20de%20ventas:%0AObjetivo:%0A" >
+                Coordinar demo por email
+              </a>
+              <a class="btn btn-outline-ef" href="https://wa.me/17873669900?text=Hola%20Sergio,%20quiero%20una%20demo%20de%20EF%20CRM%20para%20mi%20empresa" target="_blank" rel="noopener">
+                Coordinar demo por WhatsApp
+              </a>
+            </div>
+
+            <div class="mt-3 small" style="color: var(--muted);">
+              Para despliegues enterprise, integraciones y SLAs: propuesta a la medida.
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section id="info" class="py-5">
+  <!-- PLATFORM -->
+  <section id="platform" class="section">
     <div class="container">
-      <h2 class="h4 mb-4">¿Qué incluye?</h2>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-          <div class="card-feature">
-            <strong>CRM completo</strong>
-            <p class="small text-muted mb-0">
-              Panel · usuarios ilimitados · filtros · exportación CSV.
+      <div class="panel-soft p-4">
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="section-title">Plataforma</div>
+            <p class="section-sub">
+              Estandariza el flujo de leads → pipeline → seguimiento → reportes. Diseñado para equipos y supervisión.
             </p>
           </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="card-feature">
-            <strong>Landing + Form</strong>
-            <p class="small text-muted mb-0">
-              Captura de leads automatizada.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="card-feature">
-            <strong>Integraciones</strong>
-            <p class="small text-muted mb-0">
-              WhatsApp · QR · API · email · CSV.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="card-feature">
-            <strong>Soporte inicial</strong>
-            <p class="small text-muted mb-0">
-              Entrenamiento y ajustes.
-            </p>
+          <div class="col-lg-7">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="cardx">
+                  <h3>Lead intake & routing</h3>
+                  <p>Landing/forms, validación básica, asignación manual o por reglas (fase 2).</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cardx">
+                  <h3>Pipeline & actividad</h3>
+                  <p>Estatus, notas, historial, próximos pasos y visibilidad por rol.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cardx">
+                  <h3>Reporting</h3>
+                  <p>Exportación CSV, métricas base, vistas por equipo/usuario.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cardx">
+                  <h3>Data ownership</h3>
+                  <p>Los datos pertenecen al cliente. Exportables y auditables.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-4">
-    <div class="container text-center">
-      <a
-        href="https://wa.me/17873669900?text=CRM"
-        class="btn btn-primary-ef px-5"
-        target="_blank"
-        rel="noopener"
-      >
-        Solicitar CRM
-      </a>
+  <!-- SECURITY -->
+  <section id="security" class="section">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-5">
+          <div class="panel p-4 h-100">
+            <div class="section-title">Seguridad & Control</div>
+            <p class="section-sub">
+              Enfoque enterprise: acceso, permisos y buenas prácticas desde el inicio (con roadmap de compliance).
+            </p>
+            <div class="divider"></div>
+            <div class="pill">Roles (admin/agente)</div>
+            <div class="pill">Acceso seguro</div>
+            <div class="pill">Logs básicos</div>
+            <div class="pill">Backups / export</div>
+            <div class="mt-3 small" style="color: var(--muted);">
+              Si tu empresa requiere lineamientos específicos (SOC2, HIPAA, etc.), se trabaja como proyecto enterprise.
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="panel-soft p-4 h-100">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="cardx">
+                  <h3>Access & permissions</h3>
+                  <p>Roles, vistas por equipo, separación de responsabilidades.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cardx">
+                  <h3>Data handling</h3>
+                  <p>Exportación, retención configurable y control del cliente.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cardx">
+                  <h3>Environment options</h3>
+                  <p>Cloud standard o despliegue dedicado (según requisitos).</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cardx">
+                  <h3>Operational readiness</h3>
+                  <p>Onboarding, checklist de producción, soporte inicial.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRATIONS -->
+  <section id="integrations" class="section">
+    <div class="container">
+      <div class="panel-soft p-4">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <div class="section-title">Integraciones</div>
+            <p class="section-sub">
+              Conecta EF CRM con tu operación actual (WhatsApp, email, CSV, APIs). Roadmap para automatización avanzada.
+            </p>
+          </div>
+          <div class="col-lg-7">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="cardx">
+                  <h3>WhatsApp / Email</h3>
+                  <p>Coordinación de contacto y seguimiento del equipo comercial.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cardx">
+                  <h3>CSV / Data export</h3>
+                  <p>Integración simple con BI, hojas de cálculo y sistemas internos.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cardx">
+                  <h3>API-ready</h3>
+                  <p>Endpoint strategy para conectar formularios, pipelines y eventos.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cardx">
+                  <h3>Enterprise rollout</h3>
+                  <p>Workflows por equipo, reglas, reporting ampliado y SLA (propuesta).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="pill">Solar</span>
+          <span class="pill">Seguridad</span>
+          <span class="pill">Automotriz</span>
+          <span class="pill">Field sales</span>
+          <span class="pill">Call centers</span>
+          <span class="pill">B2B services</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="panel-soft p-4 h-100">
+            <div class="section-title">Precios</div>
+            <p class="section-sub">
+              Modelo para empresas: piloto rápido para validar, luego expansión enterprise con alcance y SLA.
+            </p>
+
+            <div class="row g-3 mt-1">
+              <div class="col-md-6">
+                <div class="cardx">
+                  <h3>Pilot (desde)</h3>
+                  <p><strong class="mono">$2,500</strong> · implementación base para validar flujo, pipeline y reporting.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cardx">
+                  <h3>Enterprise</h3>
+                  <p>Integraciones, despliegue dedicado, roles avanzados, automatización y SLA (propuesta).</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+            <div class="small" style="color: var(--muted);">
+              Nota: el piloto está diseñado para entrar rápido y demostrar valor. Para equipos grandes, se define alcance,
+              seguridad requerida e integraciones antes del rollout.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="panel p-4 h-100">
+            <div class="section-title">Coordinar demo</div>
+            <p class="section-sub">Cuéntame industria, tamaño del equipo y objetivo (pipeline, captación, reportes).</p>
+
+            <div class="divider"></div>
+
+            <div class="d-grid gap-2">
+              <a class="btn btn-primary-ef" href="mailto:sergio.vera@icloud.com?subject=EF%20CRM%20-%20Request%20Demo&body=Empresa:%0AIndustria:%0AEquipo%20de%20ventas:%0AObjetivo:%0AIntegraciones%20deseadas:%0A" >
+                Email: Request Demo
+              </a>
+              <a class="btn btn-outline-ef" href="https://wa.me/17873669900?text=Hola%20Sergio,%20mi%20empresa%20quiere%20una%20demo%20de%20EF%20CRM.%20Industria:%20%20Equipo:%20%20Objetivo:%20" target="_blank" rel="noopener">
+                WhatsApp: Request Demo
+              </a>
+            </div>
+
+            <div class="mt-3 small" style="color: var(--muted);">
+              Respuesta rápida. Si hay requerimientos enterprise, se agenda discovery call.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer>
-    © 2025 · EF CRM · Sergio Vera – Puerto Rico
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <div>© 2025 · EF CRM · Sergio Vera</div>
+      <div class="small">Sales Ops · CRM · Lead Capture · Enterprise Implementations</div>
+    </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
