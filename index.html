@@ -12,42 +12,45 @@
 
   <style>
     :root {
-      --accent: #0d6efd;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
+      --bg-dark: #090b16;
+      --bg-card: #111623;
+      --bg-highlight: #1b2335;
+      --accent: #4ade80;
+      --text-main: #ffffff;
+      --text-muted: #9ca3af;
       --radius: 18px;
-      --border: 1px solid #e2e8f0;
-      --shadow: 0 7px 18px rgba(15, 23, 42, 0.08);
+      --border: 1px solid #1e2533;
+      --shadow: 0 20px 35px rgba(0,0,0,0.40);
     }
 
     body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      background-color: var(--bg);
+      background: var(--bg-dark);
       color: var(--text-main);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
     nav {
-      background: transparent;
-      padding: 14px 0;
+      padding: 18px 0;
+      border-bottom: var(--border);
+      background: rgba(17, 22, 35, 0.6);
+      backdrop-filter: blur(12px);
     }
 
     nav .brand {
       font-size: 1rem;
       font-weight: 600;
-      letter-spacing: 0.03em;
+      color: var(--accent);
+      letter-spacing: 0.02em;
     }
 
     .hero {
-      padding: 90px 0 70px;
+      padding: 100px 0 70px;
     }
 
     .hero-title {
       font-size: clamp(2.6rem, 4vw, 3.4rem);
-      font-weight: 700;
+      font-weight: 600;
       line-height: 1.1;
     }
 
@@ -58,7 +61,7 @@
     }
 
     .price-card {
-      background: var(--card-bg);
+      background: var(--bg-card);
       border-radius: var(--radius);
       border: var(--border);
       padding: 32px;
@@ -82,35 +85,24 @@
       padding: 14px 24px;
       font-weight: 600;
       border: none;
+      color: #01130b;
     }
 
-    .btn-primary-ef:hover {
-      background-color: #0b58d0;
-    }
-
-    .btn-outline-ef {
-      border-radius: 999px;
-      padding: 14px 24px;
-      font-weight: 600;
-      border: 2px solid var(--text-main);
-      color: var(--text-main);
-    }
-
-    .feature-card {
-      background: var(--card-bg);
+    .card-feature {
+      background: var(--bg-card);
       border: var(--border);
       border-radius: var(--radius);
-      padding: 20px;
+      padding: 24px;
       height: 100%;
       box-shadow: var(--shadow);
     }
 
     footer {
-      padding: 30px 0;
-      margin-top: 80px;
       border-top: var(--border);
+      padding: 24px 0;
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      margin-top: 80px;
       text-align: center;
     }
   </style>
@@ -121,7 +113,7 @@
     <span class="brand">EF CRM</span>
     <a
       href="https://wa.me/17873669900?text=CRM"
-      class="btn btn-outline-dark rounded-pill"
+      class="btn btn-outline-light rounded-pill"
       style="padding: 8px 18px;"
       target="_blank"
       rel="noopener"
@@ -140,8 +132,8 @@
             por <strong>$2,500</strong>.
           </h1>
           <p class="hero-subtitle mt-3">
-            CRM completo · base de datos · panel · usuarios ilimitados · reportes · formularios
-            · archivos · WhatsApp · CSV · API · QR · sin mensualidades.
+            Base de datos · panel · usuarios ilimitados · formularios · reportes · archivo ·
+            seguimiento · CSV · API · WhatsApp · 24/7.
           </p>
 
           <div class="d-flex flex-wrap gap-3 mt-4">
@@ -155,7 +147,8 @@
             </a>
             <a
               href="#info"
-              class="btn btn-outline-ef"
+              class="btn btn-outline-light rounded-pill"
+              style="padding: 14px 24px; font-weight:600;"
             >
               Ver detalles
             </a>
@@ -193,37 +186,37 @@
       <h2 class="h4 mb-4">¿Qué incluye?</h2>
       <div class="row g-4">
         <div class="col-md-6 col-lg-3">
-          <div class="feature-card">
+          <div class="card-feature">
             <strong>CRM completo</strong>
             <p class="small text-muted mb-0">
-              Panel · dashboard · usuarios ilimitados · filtros · exportación CSV.
+              Panel · usuarios ilimitados · filtros · exportación CSV.
             </p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3">
-          <div class="feature-card">
+          <div class="card-feature">
             <strong>Landing + Form</strong>
             <p class="small text-muted mb-0">
-              Captura tus leads automáticamente en tu CRM.
+              Captura de leads automatizada.
             </p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3">
-          <div class="feature-card">
+          <div class="card-feature">
             <strong>Integraciones</strong>
             <p class="small text-muted mb-0">
-              WhatsApp, QR, CSV, email, API, campañas, apps externas.
+              WhatsApp · QR · API · email · CSV.
             </p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3">
-          <div class="feature-card">
+          <div class="card-feature">
             <strong>Soporte inicial</strong>
             <p class="small text-muted mb-0">
-              Entrenamiento · ajustes · onboarding · setup técnico.
+              Entrenamiento y ajustes.
             </p>
           </div>
         </div>
@@ -231,7 +224,6 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="py-4">
     <div class="container text-center">
       <a
@@ -246,7 +238,7 @@
   </section>
 
   <footer>
-    © 2025 · EF CRM · Sergio Vera – Puerto Rico  
+    © 2025 · EF CRM · Sergio Vera – Puerto Rico
   </footer>
 
 </body>
