@@ -5,8 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EF CRM · Enterprise Sales Ops · Sergio Vera</title>
 
-  <!-- Bootstrap 5 CDN -->
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
 
   <style>
     :root{
@@ -109,7 +115,7 @@
     .hero-subtitle{
       color: var(--muted);
       font-size: 1.08rem;
-      max-width: 640px;
+      max-width: 680px;
       margin-bottom: 18px;
     }
 
@@ -182,7 +188,7 @@
     }
     .section-sub{
       color: var(--muted);
-      max-width: 720px;
+      max-width: 760px;
     }
 
     .cardx{
@@ -229,6 +235,62 @@
       color: #CFE0FF;
       font-size: .92rem;
     }
+
+    /* --- TRUST / LOGO STRIPS --- */
+    .trust-strip{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      margin-top: 18px;
+    }
+
+    .trust-label{
+      color: var(--muted);
+      font-size: .85rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-right: 6px;
+    }
+
+    .logo-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(185,198,218,.14);
+      background: rgba(255,255,255,.03);
+      color: var(--muted2);
+    }
+
+    .logo-mark{
+      width: 22px;
+      height: 22px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(79,139,255,.55), rgba(53,208,186,.45));
+      box-shadow: 0 0 0 4px rgba(79,139,255,.10);
+      flex: 0 0 auto;
+    }
+
+    .logo-text{
+      font-weight: 650;
+      letter-spacing: .01em;
+      font-size: .95rem;
+      line-height: 1.1;
+    }
+
+    .logo-sub{
+      color: var(--muted);
+      font-size: .82rem;
+      margin-top: 1px;
+      line-height: 1.1;
+    }
+
+    .integration-pill i{
+      font-size: 18px;
+      opacity: .95;
+    }
   </style>
 </head>
 
@@ -273,12 +335,14 @@
       <div class="row g-4 align-items-center justify-content-between">
         <div class="col-lg-7">
           <div class="pill"><span class="dot"></span> Implementación rápida · Propiedad de datos · Integración con procesos existentes</div>
+
           <h1 class="hero-title mt-3">
             CRM operativo para equipos comerciales<br/>con control, trazabilidad y reporting.
           </h1>
+
           <p class="hero-subtitle">
             EF CRM estandariza la captación de leads, seguimiento, pipeline y reportes con una implementación
-            enfocada en adopción: flujos claros, permisos, auditoría básica y exportación.
+            enfocada en adopción: flujos claros, permisos y exportación.
           </p>
 
           <div class="d-flex flex-wrap gap-2 mt-3">
@@ -292,6 +356,69 @@
             <span class="pill">Dashboards</span>
             <span class="pill">Exports</span>
             <span class="pill">API-ready</span>
+          </div>
+
+          <!-- TRUSTED BY STRIP -->
+          <div class="trust-strip">
+            <div class="trust-label">Built for</div>
+
+            <div class="logo-pill">
+              <span class="logo-mark"></span>
+              <div>
+                <div class="logo-text">Enterprise Sales</div>
+                <div class="logo-sub">Field & inside teams</div>
+              </div>
+            </div>
+
+            <div class="logo-pill">
+              <span class="logo-mark"></span>
+              <div>
+                <div class="logo-text">Operations</div>
+                <div class="logo-sub">Routing & reporting</div>
+              </div>
+            </div>
+
+            <div class="logo-pill">
+              <span class="logo-mark"></span>
+              <div>
+                <div class="logo-text">B2B Services</div>
+                <div class="logo-sub">Pipeline discipline</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- INTEGRATIONS STRIP -->
+          <div class="trust-strip mt-2">
+            <div class="trust-label">Integrations</div>
+
+            <div class="logo-pill integration-pill">
+              <i class="bi bi-whatsapp"></i>
+              <div>
+                <div class="logo-text">Meta WhatsApp Cloud API</div>
+                <div class="logo-sub">Templates · webhooks · messaging</div>
+              </div>
+            </div>
+
+            <div class="logo-pill integration-pill">
+              <i class="bi bi-robot"></i>
+              <div>
+                <div class="logo-text">Bots & Automation</div>
+                <div class="logo-sub">Routing · auto-replies · qualification</div>
+              </div>
+            </div>
+
+            <div class="logo-pill integration-pill">
+              <i class="bi bi-plug"></i>
+              <div>
+                <div class="logo-text">Webhooks</div>
+                <div class="logo-sub">Events → CRM pipeline</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ✅ TECH SERIOUS LINE (ADDED) -->
+          <div class="small mt-2" style="color: var(--muted);">
+            Meta WhatsApp Cloud API-ready: templates, inbound/outbound messaging, webhooks y verificación de firma (HMAC) para eventos.
           </div>
 
           <div class="kpi">
@@ -342,7 +469,7 @@
             </ul>
 
             <div class="d-grid gap-2">
-              <a class="btn btn-primary-ef" href="mailto:sergio.vera@icloud.com?subject=EF%20CRM%20-%20Request%20Demo&body=Hola%20Sergio,%20quiero%20coordinar%20una%20demo%20para%20mi%20empresa.%0A%0AIndustria:%0AEquipo%20de%20ventas:%0AObjetivo:%0A" >
+              <a class="btn btn-primary-ef" href="mailto:sergio.vera@icloud.com?subject=EF%20CRM%20-%20Request%20Demo&body=Empresa:%0AIndustria:%0AEquipo%20de%20ventas:%0AObjetivo:%0AIntegraciones%20deseadas:%0A" >
                 Coordinar demo por email
               </a>
               <a class="btn btn-outline-ef" href="https://wa.me/17873669900?text=Hola%20Sergio,%20quiero%20una%20demo%20de%20EF%20CRM%20para%20mi%20empresa" target="_blank" rel="noopener">
@@ -472,8 +599,8 @@
             <div class="row g-3">
               <div class="col-md-6">
                 <div class="cardx">
-                  <h3>WhatsApp / Email</h3>
-                  <p>Coordinación de contacto y seguimiento del equipo comercial.</p>
+                  <h3>Meta WhatsApp Cloud API</h3>
+                  <p>Templates, inbound/outbound, webhooks y eventos para routing de leads.</p>
                 </div>
               </div>
               <div class="col-md-6">
@@ -485,7 +612,7 @@
               <div class="col-md-6">
                 <div class="cardx">
                   <h3>API-ready</h3>
-                  <p>Endpoint strategy para conectar formularios, pipelines y eventos.</p>
+                  <p>Estrategia de endpoints para formularios, pipeline y eventos.</p>
                 </div>
               </div>
               <div class="col-md-6">
@@ -519,7 +646,7 @@
           <div class="panel-soft p-4 h-100">
             <div class="section-title">Precios</div>
             <p class="section-sub">
-              Modelo para empresas: piloto rápido para validar, luego expansión enterprise con alcance y SLA.
+              Piloto rápido para validar, luego expansión enterprise con alcance e integraciones.
             </p>
 
             <div class="row g-3 mt-1">
@@ -539,8 +666,7 @@
 
             <div class="divider"></div>
             <div class="small" style="color: var(--muted);">
-              Nota: el piloto está diseñado para entrar rápido y demostrar valor. Para equipos grandes, se define alcance,
-              seguridad requerida e integraciones antes del rollout.
+              Para equipos grandes: definimos alcance, seguridad requerida e integraciones antes del rollout.
             </div>
           </div>
         </div>
@@ -548,21 +674,26 @@
         <div class="col-lg-5">
           <div class="panel p-4 h-100">
             <div class="section-title">Coordinar demo</div>
-            <p class="section-sub">Cuéntame industria, tamaño del equipo y objetivo (pipeline, captación, reportes).</p>
+            <p class="section-sub">Industria, tamaño del equipo y objetivo (pipeline, captación, reportes).</p>
 
             <div class="divider"></div>
 
+            <!-- ✅ SALES HOTLINE + EMAIL (ADDED) -->
             <div class="d-grid gap-2">
-              <a class="btn btn-primary-ef" href="mailto:sergio.vera@icloud.com?subject=EF%20CRM%20-%20Request%20Demo&body=Empresa:%0AIndustria:%0AEquipo%20de%20ventas:%0AObjetivo:%0AIntegraciones%20deseadas:%0A" >
-                Email: Request Demo
+              <a class="btn btn-primary-ef"
+                 href="mailto:sergio.vera@icloud.com?subject=EF%20CRM%20-%20Request%20Demo&body=Empresa:%0AIndustria:%0AEquipo%20de%20ventas:%0AObjetivo:%0AIntegraciones%20deseadas:%0A">
+                Contact Sales (Email)
               </a>
-              <a class="btn btn-outline-ef" href="https://wa.me/17873669900?text=Hola%20Sergio,%20mi%20empresa%20quiere%20una%20demo%20de%20EF%20CRM.%20Industria:%20%20Equipo:%20%20Objetivo:%20" target="_blank" rel="noopener">
-                WhatsApp: Request Demo
+
+              <a class="btn btn-outline-ef"
+                 href="https://wa.me/17873669900?text=Hola%20Sergio,%20mi%20empresa%20quiere%20una%20demo%20de%20EF%20CRM.%20Industria:%20%20Equipo:%20%20Objetivo:%20"
+                 target="_blank" rel="noopener">
+                Sales Hotline (WhatsApp)
               </a>
             </div>
 
-            <div class="mt-3 small" style="color: var(--muted);">
-              Respuesta rápida. Si hay requerimientos enterprise, se agenda discovery call.
+            <div class="small mt-2" style="color: var(--muted);">
+              Respuesta rápida. Para equipos grandes: discovery call + alcance + integraciones + SLA.
             </div>
           </div>
         </div>
