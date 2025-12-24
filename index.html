@@ -678,41 +678,51 @@
             <p class="section-sub">Industria, tamaño del equipo y objetivo (pipeline, captación, reportes).</p>
 
             <div class="divider"></div>
-  <form style="max-width:420px;margin-top:24px">
-  <input
-    type="text"
-    name="name"
-    placeholder="Nombre"
-    required
-    style="width:100%;padding:12px;margin-bottom:12px;border-radius:8px;border:1px solid #ccc"
-  />
+            <section id="contacto" class="section">
+  <div class="card">
+    <h2>¿Listo para una demo?</h2>
+    <p class="muted">
+      Déjanos tus datos y te escribimos por WhatsApp. (Sin compromiso)
+    </p>
 
-  <input
-    type="tel"
-    name="phone"
-    placeholder="Teléfono"
-    required
-    style="width:100%;padding:12px;margin-bottom:12px;border-radius:8px;border:1px solid #ccc"
-  />
+    <div class="grid2">
+      <input id="name" type="text" placeholder="Nombre completo" />
+      <input id="phone" type="tel" placeholder="Teléfono" />
+    </div>
 
-  <select
-    name="service"
-    required
-    style="width:100%;padding:12px;margin-bottom:16px;border-radius:8px;border:1px solid #ccc"
-  >
-    <option value="">Servicio de interés</option>
-    <option value="crm">CRM</option>
-    <option value="landing">Landing Page</option>
-    <option value="automation">Automatización</option>
-  </select>
+    <select id="service">
+      <option value="">Servicio de interés</option>
+      <option value="CRM">CRM</option>
+      <option value="Landing">Landing Page</option>
+      <option value="Automatización">Automatización</option>
+    </select>
 
-  <button
-    type="submit"
-    style="width:100%;padding:14px;border-radius:8px;background:#2563eb;color:white;font-weight:600;border:none"
-  >
-    Solicitar demo
-  </button>
-</form>
+    <textarea id="msg" rows="4" placeholder="Mensaje (opcional)"></textarea>
+
+    <button id="waBtn" class="btn">Solicitar demo</button>
+    <p class="fine">Respuesta rápida por WhatsApp.</p>
+  </div>
+</section>
+
+<script>
+  const WA_NUMBER = "17873669900"; // <-- cambia (Ivan o tú)
+
+  document.getElementById("waBtn").addEventListener("click", () => {
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const service = document.getElementById("service").value;
+    const msg = document.getElementById("msg").value.trim();
+
+    const text =
+      `Hola! Quiero una demo.\n` +
+      `Nombre: ${name || "-"}\n` +
+      `Tel: ${phone || "-"}\n` +
+      `Servicio: ${service || "-"}\n` +
+      (msg ? `Mensaje: ${msg}\n` : "");
+
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
+  });
+</script>
             <!-- ✅ SALES HOTLINE + EMAIL (ADDED) -->
             <div class="d-grid gap-2">
               <a class="btn btn-primary-ef"
