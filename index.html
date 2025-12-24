@@ -707,25 +707,6 @@
   </div>
 </section>
 
-<script>
-  const WA_NUMBER = "17873669900"; // <-- cambia (Ivan o tú)
-
-  document.getElementById("waBtn").addEventListener("click", () => {
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const service = document.getElementById("service").value;
-    const msg = document.getElementById("msg").value.trim();
-
-    const text =
-      `Hola! Quiero una demo.\n` +
-      `Nombre: ${name || "-"}\n` +
-      `Tel: ${phone || "-"}\n` +
-      `Servicio: ${service || "-"}\n` +
-      (msg ? `Mensaje: ${msg}\n` : "");
-
-    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
-  });
-</script>
             <!-- ✅ SALES HOTLINE + EMAIL (ADDED) -->
             <div class="d-grid gap-2">
               <a class="btn btn-primary-ef"
