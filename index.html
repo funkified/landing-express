@@ -15,6 +15,8 @@
   />
 
   <style>
+  
+  
     :root{
       --bg:#070A12;
       --panel:#0C1220;
@@ -291,6 +293,24 @@
       font-size: 18px;
       opacity: .95;
     }
+    
+    .brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 8px; /* da espacio antes del título */
+}
+
+.brand strong {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.brand span {
+  font-weight: 500;
+}
   </style>
 </head>
 
@@ -336,8 +356,11 @@
       <div class="row g-4 align-items-center justify-content-between">
         <div class="col-lg-7">
           <div class="pill"><span class="dot"></span> Implementación rápida · Propiedad de datos · Integración con procesos existentes</div>
-
-          <h1 class="hero-title mt-3">
+            <div class="brand">
+              <strong>EF</strong>
+              <span>Turn interest into action</span>
+            </div>
+            <h1 class="hero-title mt-3">
             CRM operativo para equipos comerciales<br/>con control, trazabilidad y reporting.
           </h1>
 
@@ -350,7 +373,7 @@
             <a class="btn btn-primary-ef" href="https://wa.me/17873669900?text=Hola%20Sergio,%20quiero%20una%20demo%20de%20EF%20CRM%20para%20mi%20empresa" target="_blank" rel="noopener">Request Demo</a>
             <a class="btn btn-outline-ef" href="#pricing">Ver precios</a>
           </div>
-
+    
           <div class="trust-row">
             <span class="pill">Sales Ops</span>
             <span class="pill">Lead Capture</span>
@@ -660,7 +683,7 @@
               <div class="col-md-6">
                 <div class="cardx">
                   <h3>Enterprise</h3>
-                  <p>Integraciones, despliegue dedicado, roles avanzados, automatización y SLA (propuesta).</p>
+                  <p><strong class="mono">$4000</strong> . Integraciones, despliegue dedicado, roles avanzados, automatización y SLA (propuesta).</p>
                 </div>
               </div>
             </div>
